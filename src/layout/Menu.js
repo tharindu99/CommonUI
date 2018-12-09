@@ -7,12 +7,10 @@ import { withRouter } from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
 
 
-
-
-
 const Menu = ({ resources, onMenuClick, logout }) => (
     <div>
         <MenuItemLink
+            key={"home"}
             to="/Home"
             primaryText="Home"
             leftIcon={<HomeIcon />}
@@ -20,6 +18,7 @@ const Menu = ({ resources, onMenuClick, logout }) => (
 
         {resources.map(resource => (
             <MenuItemLink
+                key={resource.name}
                 to={`/${resource.name}`}
                 primaryText={resource.name}
                 leftIcon={createElement(resource.icon)}
@@ -27,6 +26,7 @@ const Menu = ({ resources, onMenuClick, logout }) => (
             />
         ))}
         <MenuItemLink
+            key={"custom-route"}
             to="/custom-route"
             primaryText="Miscellaneous"
             leftIcon={<HomeIcon />}

@@ -5,15 +5,15 @@ import SettingsIcon from '@material-ui/icons/Settings';
 const CustomUserMenu = translate(({ translate, ...props }) => (
     <UserMenu {...props}>
         <MenuItemLink
-            to="/#"
-            primaryText={translate('pos.configuration')}
+            to="/Settings"
+            primaryText={translate('pos.settings')}
             leftIcon={<SettingsIcon />}
         />
     </UserMenu>
 ));
 
-const CustomAppBar = props => (
+const customAppBar = props => (
     <AppBar {...props} userMenu={<CustomUserMenu />} />
 );
 
-export default CustomAppBar;
+export default customAppBar;
